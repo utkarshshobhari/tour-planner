@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.example.org/pharsc"
+xmlns:tns="http://www.example.org/pharsc"
+elementFormDefault="qualified">
+<complexType name="MedicinesType">
+<sequence>
+<element name="drug" type="tns:MedicineType" maxOccurs="5"
+minOccurs="2"></element>
+</sequence>
+</complexType>
+<complexType name="MedicineType">
+<sequence>
+<element name="name" type="string" ></element>
+<element name="id" type="integer" ></element>
+<element name="price" type="tns:myprice" ></element>
+<element name="quantity" type="integer" ></element>
+</sequence>
+<attribute name="aid" type="ID" use="required"></attribute>
+</complexType>
+<element name="globaldrug" type="tns:MedicinesType" />
+<simpleType name="myprice">
+<restriction base="integer">
+<minInclusive value="5"></minInclusive>
+<maxInclusive value="20"></maxInclusive>
+</restriction>
+</simpleType>
+</schema>

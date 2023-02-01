@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="newstyyle.xsl"?>
+<!DOCTYPE medicine SYSTEM "guide.dtd">
+<medicine company="Pharmeasy">
+<drug aid="A1">
+<name>paris</name>
+<id>0001</id>
+<price>20</price>
+<quantity>5</quantity>
+</drug>
+<drug aid="A2" symp="Fever">
+<name>london</name>
+<id>0002</id>
+<price>10</price>
+<quantity>15</quantity>
+</drug>
+<drug aid="A3" >
+<name>bangkok</name>
+<id>0003</id>
+<price>12</price>
+<quantity>3</quantity>
+</drug>
+</medicine>

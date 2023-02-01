@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT medicine (drug+)>
+<!ELEMENT drug (name,id,price,quantity)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ATTLIST drug aid ID #REQUIRED>
+<!ATTLIST drug symp CDATA #IMPLIED>
+<!ATTLIST medicine company CDATA #FIXED "Pharmeasy">

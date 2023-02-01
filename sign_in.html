@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign in</title>
+        <link rel = "icon" href = "images/site_logo.jpg" type = "image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            body {
+            background-image: url('images/london.jpg');
+            }
+            </style>
+    <div class = "container">
+        <div class="form-box">
+        <div class="button-box">
+        <div id="btn"></div>
+        <button type="button" class="toggle-btn" onclick =
+        "admin()"><strong>Admin</strong></button>
+        <button type="button" class="toggle-btn" onclick =
+        "pharmacist()"><strong>tourist</strong></button>
+        </div>
+        <form id= "admin" class = "input-group" action="two.html"
+        method="POST">
+        <label>Username : </label>
+        <input type="email" class="input-field" placeholder="Enter Username"
+        title="must contain valid email" name="username" required>
+        <label>Password : </label>
+        <input type="password" class="input-field" placeholder="Enter Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain
+        8char,1upper,1lower,1number" name="password" required>
+        <br>
+        <button type="submit" class="submitbtn" name="Login"
+        onclick="alertbox()"><strong>Login</strong></button>
+        <br>
+        Forgot <a href="#" > password? </a>
+        </form>
+        <form id= "pharmacist" class = "input-group" action="login1.php"
+        method="POST">
+        <label>Username : </label>
+        <input type="email" class="input-field" placeholder="Enter Username"
+        title="must contain valid email" name="pusername" required>
+        <label>Password : </label>
+        <input type="password" class="input-field" placeholder="Enter Password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain
+        8char,1upper,1lower,1number" name="ppassword" required>
+        <br>
+        <button type="submit" class="submitbtn" name="pLogin"
+        onclick="alertbox()"><strong>Login</strong></button>
+        <br>
+        Forgot <a href="#" > password? </a>
+        </form>
+        </div>
+        </div>
+        <script>
+        var x = document.getElementById("admin");
+        var y = document.getElementById("pharmacist");
+        var z = document.getElementById("btn");
+        var a = document.getElementById("alertbox");
+        function admin(){
+        x.style.left= "50px";
+        y.style.left="450px";
+        z.style.left= "0";
+        }
+        function pharmacist(){
+        x.style.left= "-400px";
+        y.style.left= "50px";
+        z.style.left= "120px";
+        }
+        function aclear(){
+        document.getElementById("admin").reset();
+        }
+        function eclear(){
+        document.getElementById("pharmacist").reset();
+        }
+        function alertbox() {
+        alert("Logged in Successfully!!");
+        }
+        </script>
+        </body>
+
+        </html>
