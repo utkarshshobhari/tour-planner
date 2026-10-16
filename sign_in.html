@@ -1,86 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Sign in</title>
-        <link rel = "icon" href = "images/site_logo.jpg" type = "image/x-icon">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign in | Tour Planner</title>
+        <link rel="icon" href="images/site_logo.jpg" type="image/jpeg">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <style>
-            body {
-            background-image: url('images/london.jpg');
-            }
-            </style>
-    <div class = "container">
-        <div class="form-box">
-        <div class="button-box">
-        <div id="btn"></div>
-        <button type="button" class="toggle-btn" onclick =
-        "admin()"><strong>Admin</strong></button>
-        <button type="button" class="toggle-btn" onclick =
-        "pharmacist()"><strong>tourist</strong></button>
-        </div>
-        <form id= "admin" class = "input-group" action="two.html"
-        method="POST">
-        <label>Username : </label>
-        <input type="email" class="input-field" placeholder="Enter Username"
-        title="must contain valid email" name="username" required>
-        <label>Password : </label>
-        <input type="password" class="input-field" placeholder="Enter Password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain
-        8char,1upper,1lower,1number" name="password" required>
-        <br>
-        <button type="submit" class="submitbtn" name="Login"
-        onclick="alertbox()"><strong>Login</strong></button>
-        <br>
-        Forgot <a href="#" > password? </a>
-        </form>
-        <form id= "pharmacist" class = "input-group" action="login1.php"
-        method="POST">
-        <label>Username : </label>
-        <input type="email" class="input-field" placeholder="Enter Username"
-        title="must contain valid email" name="pusername" required>
-        <label>Password : </label>
-        <input type="password" class="input-field" placeholder="Enter Password"
-        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain
-        8char,1upper,1lower,1number" name="ppassword" required>
-        <br>
-        <button type="submit" class="submitbtn" name="pLogin"
-        onclick="alertbox()"><strong>Login</strong></button>
-        <br>
-        Forgot <a href="#" > password? </a>
-        </form>
-        </div>
-        </div>
-        <script>
-        var x = document.getElementById("admin");
-        var y = document.getElementById("pharmacist");
-        var z = document.getElementById("btn");
-        var a = document.getElementById("alertbox");
-        function admin(){
-        x.style.left= "50px";
-        y.style.left="450px";
-        z.style.left= "0";
-        }
-        function pharmacist(){
-        x.style.left= "-400px";
-        y.style.left= "50px";
-        z.style.left= "120px";
-        }
-        function aclear(){
-        document.getElementById("admin").reset();
-        }
-        function eclear(){
-        document.getElementById("pharmacist").reset();
-        }
-        function alertbox() {
-        alert("Logged in Successfully!!");
-        }
-        </script>
-        </body>
+    <body class="form-page">
+        <main>
+            <form class="form-card" id="sign-in-form">
+                <h1>Sign in</h1>
+                <p>Sign in to your Tour Planner account.</p>
+                <p class="form-notice">Sign-in is not connected to an authentication service in this static demo. Your credentials will not be sent or stored.</p>
 
-        </html>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+                <button type="submit" class="form-button">Check sign-in details</button>
+                <p class="form-status" id="sign-in-status" role="status" aria-live="polite"></p>
+                <p class="form-footer">New to Tour Planner? <a href="registration.html">Register</a>.</p>
+                <p class="form-footer"><a href="index.html">Back to home</a></p>
+            </form>
+        </main>
+        <script>
+            document.getElementById("sign-in-form").addEventListener("submit", (event) => {
+                event.preventDefault();
+                document.getElementById("sign-in-status").textContent =
+                    "Sign-in is unavailable until an authentication service is connected. You have not been signed in.";
+            });
+        </script>
+    </body>
+</html>

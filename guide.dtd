@@ -1,10 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT medicine (drug+)>
-<!ELEMENT drug (name,id,price,quantity)>
+<!ELEMENT destinations (destination+)>
+<!ELEMENT destination (name,location,estimatedCost,durationHours)>
+<!ATTLIST destination id ID #REQUIRED>
 <!ELEMENT name (#PCDATA)>
-<!ELEMENT id (#PCDATA)>
-<!ELEMENT price (#PCDATA)>
-<!ELEMENT quantity (#PCDATA)>
-<!ATTLIST drug aid ID #REQUIRED>
-<!ATTLIST drug symp CDATA #IMPLIED>
-<!ATTLIST medicine company CDATA #FIXED "Pharmeasy">
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT estimatedCost (#PCDATA)>
+<!ELEMENT durationHours (#PCDATA)>

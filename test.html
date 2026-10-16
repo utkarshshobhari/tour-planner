@@ -3,10 +3,11 @@
  <!-- newforminputtypes.html -->
  <!-- New HTML5 form input types and attributes. -->
 
- <html>
+ <html lang="en">
 
 <head>
  	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
  	<title>New HTML5 Input Types</title>
  </head>
 
@@ -16,39 +17,39 @@
  	<p>      This form demonstrates the new HTML5 input types
  and the placeholder, required and autofocus attributes.
  </p>
-<form method = "post" action = "http://youtube.com">
+<form method="get">
   	<p>
  		<label>Color:
-<input type = "color" autofocus />
+<input type="color" name="color" autofocus />
 (Hexadecimal code such as #ADD8E6)
  		</label>
  </p>
 
  <p>
  <label>Date:
-<input type = "date" />
+<input type="date" name="date" />
 (yyyy-mm-dd)
  </label>
  </p>
  
 <p>
- 		<label>Datetime:
-<input type = "datetime" />
-(yyyy-mm-ddThh:mm+ff:gg, such as 2012-01-27T03:15)
+        <label>Datetime local:
+<input type="datetime-local" name="datetime" />
+(yyyy-mm-ddThh:mm, such as 2012-01-27T03:15)
 
  		</label>
  </p>
 
  <p>
  		<label>Datetime-local:
-<input type = "datetime-local" />
+<input type="datetime-local" name="datetime-local" />
 (yyyy-mm-ddThh:mm, such as 2012-01-27T03:15)
  		</label>
  	</p>
 
  <p>
  		<label>Email:
-<input type = "email" placeholder = "name@domain.com"
+<input type="email" name="email" placeholder="name@domain.com"
 required /> (name@domain.com)
 
  		</label>
@@ -56,14 +57,15 @@ required /> (name@domain.com)
  	
 <p>
  		<label>Month:
-<input type = "email" placeholder = "name@domain.com"
-required /> (name@domain.com)
+<input type="month" name="month"
+required /> (yyyy-mm)
  		</label>
  	</p>
  	
 <p>
  		<label>Number:
 <input type = "number"
+name="number"
 min = "0"
 max = "7"
 step = "1"
@@ -74,6 +76,7 @@ value = "4" />
 <p>
  		<label>Range:
 0 <input type = "range"
+name="range"
 min = "0"
 max = "20"
 value = "10" /> 20
@@ -85,13 +88,13 @@ value = "10" /> 20
  
 <p>
  		<label>Search:
-<input type = "search" placeholder = "search query" />
+<input type="search" name="search" placeholder="search query" />
  			</label> (Enter your search query here.)
  	</p>
 
  <p>
  		<label>Tel:
-<input type = "tel" placeholder = "(###) ###-####"
+<input type="tel" name="telephone" placeholder="(###) ###-####"
 pattern = "\(\d{3}\) +\d{3}-\d{4}" required />
 (###) ###-####
  </label>
@@ -99,13 +102,13 @@ pattern = "\(\d{3}\) +\d{3}-\d{4}" required />
 
  <p>
  <label>Time:
-<input type = "time" /> (hh:mm:ss.ff)
+<input type="time" name="time" /> (hh:mm)
  		</label>
  	</p>
  	
 <p>
  		<label>URL:
-<input type = "url"
+<input type="url" name="url"
 placeholder = "http://www.domainname.com" />
 (http://www.domainname.com)
  		</label>
@@ -113,7 +116,7 @@ placeholder = "http://www.domainname.com" />
  	
 <p>
  		<label>Week:
-<input type = "week" />
+<input type="week" name="week" />
 (yyyy-Wnn, such as 2012-W01)
  		</label>
  	</p>

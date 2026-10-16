@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-targetNamespace="http://www.example.org/pharsc"
-xmlns:tns="http://www.example.org/pharsc"
-elementFormDefault="qualified">
-<complexType name="MedicinesType">
-<sequence>
-<element name="drug" type="tns:MedicineType" maxOccurs="5"
-minOccurs="2"></element>
-</sequence>
-</complexType>
-<complexType name="MedicineType">
-<sequence>
-<element name="name" type="string" ></element>
-<element name="id" type="integer" ></element>
-<element name="price" type="tns:myprice" ></element>
-<element name="quantity" type="integer" ></element>
-</sequence>
-<attribute name="aid" type="ID" use="required"></attribute>
-</complexType>
-<element name="globaldrug" type="tns:MedicinesType" />
-<simpleType name="myprice">
-<restriction base="integer">
-<minInclusive value="5"></minInclusive>
-<maxInclusive value="20"></maxInclusive>
-</restriction>
-</simpleType>
-</schema>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="destinations" type="DestinationsType"/>
+
+    <xs:complexType name="DestinationsType">
+        <xs:sequence>
+            <xs:element name="destination" type="DestinationType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DestinationType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="location" type="xs:string"/>
+            <xs:element name="estimatedCost" type="EstimatedCostType"/>
+            <xs:element name="durationHours" type="xs:positiveInteger"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+
+    <xs:simpleType name="EstimatedCostType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
